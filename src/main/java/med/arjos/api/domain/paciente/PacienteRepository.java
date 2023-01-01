@@ -1,4 +1,4 @@
-package med.arjos.api.paciente;
+package med.arjos.api.domain.paciente;
 
 
 import org.springframework.data.domain.Page;

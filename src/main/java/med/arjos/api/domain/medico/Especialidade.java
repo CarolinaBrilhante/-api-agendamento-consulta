@@ -1,4 +1,4 @@
-package med.arjos.api.medico;
+package med.arjos.api.domain.medico;
 
 public enum Especialidade {
 

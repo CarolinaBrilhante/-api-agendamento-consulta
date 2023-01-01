@@ -1,4 +1,4 @@
-package med.arjos.api.paciente;
+package med.arjos.api.domain.paciente;
 
 
 public record DadosListagemPacientes(Long id, String nome, String email, String cpf) {
