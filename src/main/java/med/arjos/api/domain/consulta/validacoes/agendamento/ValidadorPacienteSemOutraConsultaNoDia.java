@@ -1,4 +1,4 @@
-package med.arjos.api.domain.consulta.validacoes;
+package med.arjos.api.domain.consulta.validacoes.agendamento;
 
 import med.arjos.api.domain.ValidacaoException;
 import med.arjos.api.domain.consulta.ConsultaRepository;

@@ -1,7 +1,8 @@
-package med.arjos.api.domain.consulta.validacoes;
+package med.arjos.api.domain.consulta.validacoes.agendamento;
 
 import med.arjos.api.domain.ValidacaoException;
 import med.arjos.api.domain.consulta.DadosAgendamentoConsulta;
+import med.arjos.api.domain.consulta.validacoes.agendamento.ValidadorAgendamentoDeConsulta;
 import med.arjos.api.domain.medico.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

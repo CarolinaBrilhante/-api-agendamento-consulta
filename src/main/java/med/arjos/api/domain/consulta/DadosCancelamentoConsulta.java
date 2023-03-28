@@ -1,0 +1,22 @@
+package med.arjos.api.domain.consulta;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.NotNull;
+import med.arjos.api.domain.medico.Especialidade;
+
+import java.time.LocalDateTime;
+
+public record DadosCancelamentoConsulta(
+        Long idConsulta,
+        Long idMedico,
+
+        @NotNull
+        Long idPaciente,
+        @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+        @NotNull
+        @Future
+        LocalDateTime data,
+        Especialidade especialidade) {
+
+}

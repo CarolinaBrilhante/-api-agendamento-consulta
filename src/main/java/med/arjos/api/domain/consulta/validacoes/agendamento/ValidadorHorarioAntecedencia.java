@@ -1,12 +1,13 @@
-package med.arjos.api.domain.consulta.validacoes;
+package med.arjos.api.domain.consulta.validacoes.agendamento;
 
 import med.arjos.api.domain.ValidacaoException;
 import med.arjos.api.domain.consulta.DadosAgendamentoConsulta;
+import med.arjos.api.domain.consulta.validacoes.agendamento.ValidadorAgendamentoDeConsulta;
 import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-@Component
+@Component("ValidadorHorarioAntecedenciaAgendamento")
 public class ValidadorHorarioAntecedencia implements ValidadorAgendamentoDeConsulta {
 
     public void  validar(DadosAgendamentoConsulta dados){
