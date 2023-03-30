@@ -31,6 +31,8 @@ public class Consulta {
 
     private LocalDateTime data;
 
+    private MotivoCancelamento motivoCancelamento;
+
     public void cancelar(MotivoCancelamento motivoCancelamento) {
     }
 }

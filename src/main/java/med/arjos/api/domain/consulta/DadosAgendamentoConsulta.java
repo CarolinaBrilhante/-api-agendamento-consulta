@@ -16,6 +16,8 @@ public record DadosAgendamentoConsulta(
         @NotNull
         @Future
         LocalDateTime data,
-        Especialidade especialidade) {
+        Especialidade especialidade,
+
+        MotivoCancelamento motivoCancelamento) {
 
 }
