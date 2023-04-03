@@ -26,7 +26,7 @@ public class Paciente {
     private Endereco endereco;
     private Boolean ativo;
 
-    public Paciente(DadosCadastroPacientes dados) {
+    public Paciente(DadosCadastroPaciente dados) {
         this.ativo = true;
         this.nome = dados.nome();
         this.email = dados.email();
@@ -35,7 +35,7 @@ public class Paciente {
         this.endereco = new Endereco(dados.endereco());
     }
 
-    public void atuaizarInformacoes(DadosAtualizacaoPacientes dados) {
+    public void atuaizarInformacoes(DadosAtualizacaoPaciente dados) {
        if (dados.nome() != null ) {
            this.nome = dados.nome();
        }

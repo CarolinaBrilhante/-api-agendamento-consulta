@@ -22,7 +22,7 @@ public class PacienteController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroPacientes dados, UriComponentsBuilder uriBuilder){
+    public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroPaciente dados, UriComponentsBuilder uriBuilder){
         var paciente = new Paciente(dados);
         repository.save(paciente);
 
@@ -38,7 +38,7 @@ public class PacienteController {
 
     @PutMapping
     @Transactional
-    public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoPacientes dados){
+    public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoPaciente dados){
         var paciente= repository.getReferenceById(dados.id());
         paciente.atuaizarInformacoes(dados);
 

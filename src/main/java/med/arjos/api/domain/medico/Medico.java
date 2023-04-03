@@ -28,7 +28,7 @@ public class Medico {
     private Endereco endereco;
     private Boolean ativo;
 
-    public Medico(DadosCadastroMedicos dados) {
+    public Medico(DadosCadastroMedico dados) {
         this.ativo = true;
         this.nome = dados.nome();
         this.email = dados.email();
