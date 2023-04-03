@@ -11,7 +11,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 
-import static org.assertj.core.api.FactoryBasedNavigableListAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 
 @DataJpaTest
@@ -22,13 +22,13 @@ class MedicoRepositoryTest {
     private MedicoRepository medicoRepository;
 
     @Test
-    @DisplayName("Deveria devolver null quando unico medico cadastrado nao esta disponivel na data")
+    @DisplayName("Deveria devolver null quando único médico cadastrado não está disponível na data")
     void escolherMedicoAleatorioLivreNaDataCenario1() {
         var proximaSegundaAs10 = LocalDate.now()
                 .with(TemporalAdjusters.next(DayOfWeek.MONDAY))
                 .atTime(10, 0);
         var medicoLivre = medicoRepository.escolherMedicoAleatorioLivreNaData(Especialidade.CARDIOLOGIA, proximaSegundaAs10);
-        assertThat(medicoLivre).isNull();
+        assertNull(medicoLivre);
 
 
     }
