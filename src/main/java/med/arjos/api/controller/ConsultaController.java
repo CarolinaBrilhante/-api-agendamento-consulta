@@ -22,5 +22,11 @@ public class ConsultaController {
       var dto = agenda.agendar(dados);
       return ResponseEntity.ok(dto);
     }
+    @PutMapping
+    @Transactional
+    public void cancelar(@RequestBody @Valid DadosCancelamentoConsulta dados){
+        agenda.cancelar(dados);
+
+    }
 
 }

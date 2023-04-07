@@ -35,4 +35,8 @@ public class Consulta {
 
     public void cancelar(MotivoCancelamento motivoCancelamento) {
     }
+
+    public void setMotivoCancelamento(MotivoCancelamento motivoCancelamento) {
+        this.motivoCancelamento = motivoCancelamento;
+    }
 }

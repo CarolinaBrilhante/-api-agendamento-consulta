@@ -8,6 +8,7 @@ import med.arjos.api.domain.medico.MedicoRepository;
 import med.arjos.api.domain.paciente.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -63,15 +64,21 @@ public class AgendaDeConsultas {
         return medicoRepository.escolherMedicoAleatorioLivreNaData(dados.especialidade(), dados.data());
     }
 
-    public void cancelar(DadosCancelamentoConsulta dados) {
-        if (!consultaRepository.existsById(dados.idConsulta())) {
-            throw new ValidacaoException("Id da consulta informado não existe!");
-        }
-
-        validadoresCancelamento.forEach(v -> v.validar(dados));
-
-        var consulta = consultaRepository.getReferenceById(dados.idConsulta());
-        consulta.cancelar(dados.motivoCancelamento());
+@Transactional
+public void cancelar(DadosCancelamentoConsulta dados) {
+    if (!consultaRepository.existsById(dados.idConsulta())) {
+        throw new ValidacaoException("Id da consulta informado não existe!");
     }
+     if(!consultaRepository.motivoCancelamentoIsNull(dados.idConsulta())) {
+        throw new ValidacaoException("Consulta informada já está cancelada!");
+
+    }
+    validadoresCancelamento.forEach(v -> v.validar(dados));
+
+    Consulta consulta = consultaRepository.getOne(dados.idConsulta());
+    consulta.setMotivoCancelamento(dados.motivoCancelamento());
+    consultaRepository.save(consulta);
+}
+
 
 }

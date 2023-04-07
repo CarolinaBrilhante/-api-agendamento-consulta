@@ -5,4 +5,5 @@ import med.arjos.api.domain.consulta.DadosCancelamentoConsulta;
 public interface ValidadorCancelamentoDeConsulta {
 
     void validar (DadosCancelamentoConsulta dados);
+
 }
